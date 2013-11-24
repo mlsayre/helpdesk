@@ -70,18 +70,6 @@ class TicketsController < ApplicationController
     end
   end
 
-  def self.update_from_inbound_hook(message)
-    @ticket = Ticket.find(params[:id])
-
-    self.update(:reply => message["TextBody"])
-  end
-
-  post '/inbound' do
-    request.body.rewind
-    reply = Ticket.update_from_inbound_hook(Postmark::Json.decode(request.body.read))
-    logger.info reply.inspect
-  end
-
   # DELETE /tickets/1
   # DELETE /tickets/1.json
   def destroy
