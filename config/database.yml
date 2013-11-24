@@ -23,5 +23,3 @@ production:
   encoding: unicode
   database: myapp_production
   pool: 5
-  username: myapp
-  password:
