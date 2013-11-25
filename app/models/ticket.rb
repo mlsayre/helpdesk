@@ -3,9 +3,9 @@ class Ticket < ActiveRecord::Base
 
   def self.create_from_inbound_hook(message)
 
-    self.update_attributes(:id => message["Subject"],
-                           :reply => message["TextBody"]
-                           )
+    self.update(:id => message["Subject"],
+                :reply => message["TextBody"]
+               )
   end
 end
 
