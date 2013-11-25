@@ -40,7 +40,7 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
-    @ticket = Ticket.new(params[:ticket])
+    @ticket = Ticket.create_from_inbound_hook(Postmark::Json.decode(request.body.read))
 
     respond_to do |format|
       if @ticket.save
