@@ -3,7 +3,7 @@ class Ticket < ActiveRecord::Base
 
   def self.create_from_inbound_hook(message)
 
-    self.update(message["Subject"], :reply => message["TextBody"])
+    self.update(message["Subject"].gsub("Re: ", ""), :reply => message["TextBody"])
   end
 end
 
