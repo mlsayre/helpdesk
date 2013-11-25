@@ -5,6 +5,8 @@ class Ticket < ActiveRecord::Base
     self.new(:reply => message["TextBody"],
              :name => message["Subject"])
   end
+end
+
 
 post '/inbound' do
   request.body.rewind
