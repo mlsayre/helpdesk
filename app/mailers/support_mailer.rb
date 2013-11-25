@@ -1,6 +1,6 @@
 class SupportMailer < ActionMailer::Base
-  default from: "1245d518b80877f70ee8d3f6c4374385@inbound.postmarkapp.com
-"
+  default from: "matt@thegamecomposer.com",
+          reply_to: "1245d518b80877f70ee8d3f6c4374385@inbound.postmarkapp.com"
 
   def ticket_notify(ticket)
     @ticket = ticket
