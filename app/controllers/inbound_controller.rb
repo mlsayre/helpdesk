@@ -40,7 +40,7 @@ class InboundController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
-    @ticket = Ticket.create_from_inbound_hook(Postmark::Json.decode(request.body.read))
+    @ticket = Ticket.update_from_inbound_hook(Postmark::Json.decode(request.body.read))
 
     respond_to do |format|
       if @ticket.save
