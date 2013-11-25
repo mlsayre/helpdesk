@@ -6,4 +6,11 @@ class SupportMailer < ActionMailer::Base
 
     mail to: "matt@thegamecomposer.com", subject: "#{ticket.name}"
   end
+
+  def receive(email)
+    ticket = Ticket.find_by_email(email.subject)
+    ticket.emails.create(
+      :reply => email.body
+      )
+  end
 end
