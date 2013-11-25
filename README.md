@@ -7,4 +7,6 @@ Problem: I used "reply_to" when sending the notification email. Gmail doesn't us
 
 Problem: Implementing inbound email was more difficult than it needed to be. I will be creating a tutorial for that, as it seems like a common enough feature for Rails apps. 
 
+Live on Heroku: http://helpdeskprime.herokuapp.com/
+
 ![](https://raw.github.com/mlsayre/helpdesk/master/app/assets/images/helpdeskss.png)
