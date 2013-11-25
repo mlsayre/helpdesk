@@ -8,8 +8,4 @@ class Ticket < ActiveRecord::Base
 end
 
 
-post '/inbound' do
-  request.body.rewind
-  ticket = Ticket.create_from_inbound_hook(Postmark::Json.decode(request.body.read))
-  # logger.info ticket.inspect
-end
+

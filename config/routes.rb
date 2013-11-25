@@ -1,7 +1,11 @@
 Helpdesk::Application.routes.draw do
   resources :tickets
 
-
+  post '/tickets' do
+    request.body.rewind
+    ticket = Ticket.create_from_inbound_hook(Postmark::Json.decode(request.body.read))
+    # logger.info ticket.inspect
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
