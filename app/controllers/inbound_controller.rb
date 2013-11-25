@@ -1,4 +1,4 @@
-class TicketsController < ApplicationController
+class InboundController < ApplicationController
   # GET /tickets
   # GET /tickets.json
   def index
