@@ -1,7 +1,7 @@
 Helpdesk::Application.routes.draw do
   resources :tickets
 
-  match 'inbound' => 'inbound#index', :as => :inbound
+  match 'inbound' => 'inbound#create', :as => :inbound
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
