@@ -8,8 +8,8 @@ class SupportMailer < ActionMailer::Base
   end
 
   def receive(email)
-    ticket = Ticket.find_by_email(email.subject)
-    ticket.emails.create(
+    ticket = Ticket.new
+    ticket.create(
       :reply => email.body
       )
   end
