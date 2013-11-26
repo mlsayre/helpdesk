@@ -6,6 +6,7 @@ class SupportMailer < ActionMailer::Base
     @ticket = ticket
 
     mail to: "matt@thegamecomposer.com",
+         reply_to: "1245d518b80877f70ee8d3f6c4374385@inbound.postmarkapp.com",
          subject: "#{ticket.id}",
          text_body: "#{ticket.problem}"
   end
